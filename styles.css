@@ -1,0 +1,515 @@
+/*  Font  */
+
+@font-face {
+  font-family: "Geologica";
+  src: url("Geologica.ttf") format("ttf");
+}
+
+
+
+/*  Design System  */
+
+/* Variables */
+:root {
+  --text-color-RGB: 50, 50, 50;
+  --link-color-RGB: 50, 100, 200;
+  --hover-color-RGB: 50, 200, 100;
+  --button-color: 255, 223, 149;
+
+  --text-color: rgb(248, 247, 247);
+  --accent-color: rgba(50, 150, 150, 1);
+  --link-color: rgba(50, 100, 200, 1);
+  --hover-color: rgba(50, 200, 100, 1);
+
+  --grid-item-margin: 1em;
+  --small-gap: 1em;
+  --grey: rgba(0, 0, 0, 0.118);
+  --md-gap: 3em;
+  --lg-gap: 5em;
+  --tilda-promo-bg: #f7eee9;
+  --mondial-pack-bg: #e0f4db;
+
+  --padding__ds: 2em;
+  --padding__mb: 1em;
+  
+  
+}
+
+
+/* Basic */
+* {
+  box-sizing: border-box;
+}
+b {
+  font-weight: 700;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+.content {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+body {
+  font-family: "Geologica";
+  color: var(--text-color);
+  font-size: clamp(1.125rem, 0.714vw + 0.964rem, 1.5rem);
+  line-height: clamp(1.688rem, 0.5vw + 1.575rem, 1.95rem);
+  margin: 0;
+  background-color: rgb(12, 12, 12);
+  padding: 1em 0 2em 0;
+  padding: var(--padding__ds);
+}
+
+/* Gaps */
+.space_XL {
+  height: 5em;
+}
+.space_md {
+  height: 2em;
+}
+.space_sm {
+  height: 0.5em;
+}
+
+p {
+  margin-top: 0;
+  width: 70%;
+  margin-bottom: 0.5em;
+  @media (min-width: 360px) and (max-width: 700px) {
+    width: 100%;
+  }
+}
+
+div p {
+  width: 100%;
+}
+
+img {
+  width: 100%;
+  border-radius: 0.2em;
+}
+
+/* Heading */
+h2 {
+  font-size: 1.5em;
+  margin-top: 0;
+  line-height: 1.2;
+  margin-bottom: 1em;
+  font-weight: 400;
+}
+
+h1 {
+  font-size: 1.8em;
+  margin-top: 0;
+  margin-bottom: 0.4em;
+  line-height: 1.2em;
+  font-weight: 400;
+}
+
+/* Links */
+a {
+  color: var(--link-color);
+  text-decoration-thickness: 0.1px;
+  text-underline-offset: 0.2em;
+  transition: color 0.4s ease;
+  text-decoration-color: rgba(var(--link-color-RGB), 0.3);
+}
+
+a:hover {
+  color: rgba(var(--hover-color-RGB), 1);
+  cursor: pointer;  
+  transition: color 0s ease;
+  text-decoration-color: rgba(var(--hover-color-RGB), 0.8);
+}
+
+/*Layout*/
+.leading {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+
+}
+
+.leading h1 {
+  font-style: italic;
+  font-size: 5em;
+  margin-bottom: 0;
+  color: #fff;
+  padding-right: 15px;
+  text-align: center;
+  
+  background: linear-gradient(90deg, #c81d77, #6710c2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+
+  /* text-shadow:
+  0px 0px 60px #c81d77,
+  0px 0px 80px #6710c2; */
+
+}
+
+.leadingTxt {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+
+.leading p {
+  font-size: 1.2em;
+  width: auto;
+  font-weight: 200;
+  margin-bottom: 2em;
+  padding-right: 15px;
+}
+
+.leading img {
+  max-width: 90%;
+  position: relative;
+}
+
+.firstBeatDescr {
+  display: flex;
+  gap: 1em;
+}
+
+.connectorsImg {
+  margin-top: 3em;
+}
+
+p {
+  font-size: clamp(1.125rem, 0.714vw + 0.964rem, 1rem);
+  line-height: clamp(1.688rem, 0.5vw + 1.575rem, 1.3rem);
+}
+
+.connectors p {
+  max-width: 22%;
+}
+
+.connectorsTxt {
+  display: flex;
+  gap: 1.5em;
+  flex-flow: row wrap;
+}
+
+.compare {
+  display: flex;
+  gap: 2em;
+}
+
+.compare div {
+  min-width: 48%;
+}
+
+.studio iframe, .AKAI iframe {
+  margin: 1em 0;
+}
+
+.special {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+  padding-left: 1em;
+  grid-column: 5 / 7;
+}
+
+
+.specialItem {
+
+  display: flex;
+  flex-direction: row;
+}
+
+.specialItem div {
+  flex: 1;
+}
+
+.tableComp {
+  display: grid;
+  grid-template-rows: repeat(3, auto);
+  grid-template-columns: repeat(6, 1fr);
+  row-gap: 1em;
+  padding-bottom: 0.5em;
+  border-bottom: 1px solid #ffffff55;
+}
+
+.tableComp img {
+  padding-right: 1em;
+}
+
+.tableComp div:nth-child(3) {
+  grid-column: 3 / 6;
+  padding-left: 1em;
+}
+
+.tableComp div:nth-child(5) {
+  grid-column: 1 / 4;
+}
+.special img {
+  padding-right: 0.5em;
+}
+
+.tableComp div:nth-child(8) {
+  grid-column: 1 / 5;
+}
+.tableComp div:nth-child(9) {
+  grid-column: 5 / 7;
+}
+
+
+.offer h1 {
+  color: #fff;
+  padding-right: 15px;
+  font-style: italic;
+  margin-bottom: 0;
+  font-size: 3em;
+  
+  background: linear-gradient(90deg, #c81d77, #6710c2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* .offerTxt {
+  font-size: 1.2em;
+  width: auto;
+  font-weight: 200;
+  margin-bottom: 2em;
+  padding-right: 15px;
+} */
+
+.offerBody {
+  display: flex;
+  width: 100%;
+  gap: 2em;
+
+}
+
+.offerTxt {
+  font-size: 1.2em;
+}
+
+
+.offerBody div {
+  flex: 1;
+}
+
+.txtList {
+  margin-top: 1.5em;
+}
+
+a.button {
+  text-decoration: none;
+}
+
+.button {
+  color: #fff;
+  background: #000;
+  padding: 0.5em 1em 0.5em 1em;
+  width: fit-content;
+  border: none;
+  position: relative;
+  height: fit-content;
+  margin-bottom: 1em;
+  border-radius: 0.2em;
+
+  background: linear-gradient(45deg, #ff0080, #7928ca, #007aff);
+            background-size: 300% 300%;
+            cursor: pointer;
+            outline: none;
+            position: relative;
+            transition: background-position 0.5s ease;
+            animation: none; /* Изначально анимация отключена */
+}
+
+.button:hover {
+  animation: gradientMove 5s infinite;
+  animation-play-state: running; /* Запуск анимации при наведении */
+}
+
+/* Пауза анимации при зажатии кнопки */
+.button:active {
+  animation-play-state: paused;
+}
+
+@keyframes gradientMove {
+  0% {
+      background-position: 0% 50%;
+  }
+  50% {
+      background-position: 100% 50%;
+  }
+  100% {
+      background-position: 0% 50%;
+  }
+}
+
+.forAlignment {
+  display: flex;
+  flex-direction: column;
+}
+
+a.button:hover {
+  color: #fff;
+}
+
+.info {
+  display: none;
+}
+
+.alreadyHasStudioContainer {
+  display: flex;
+  gap: 1em;
+}
+
+.enlargedMg {
+  margin-bottom: 2em;
+}
+
+/*Media Queries*/
+@media (max-width: 1000px) {
+  
+  .info {
+    display: block;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+    padding: 0.5em 1em;
+    right: 0;
+    background: linear-gradient(90deg, #c81d77, #6710c2);
+  }
+
+  .info p {
+    margin-bottom: 0;
+  }
+
+};
+
+
+
+
+
+
+
+
+
+/*Проще компактнее дешевле*/
+/* .offer {
+  height: 100vh;
+}
+
+.offer h1 {
+  color: #fff;
+  padding-right: 15px;
+  text-align: center;
+  font-size: 5em;
+  font-style: italic;
+  
+  background: linear-gradient(90deg, #c81d77, #6710c2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.offerComp {
+  border-radius: 0.8em;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  min-width: 100%;
+
+  
+}
+
+.offerComp img {
+  border-radius: 0;
+}
+
+.offerComp p {
+  text-align: center;
+  height: 100%;
+  font-size: 4em;
+} 
+.offerWrap {
+  display: flex;
+  position: relative;
+  overflow: hidden;
+}
+
+.offerComp:nth-child(2), .offerComp:nth-child(3) {
+  position: absolute;
+}
+.offerComp:nth-child(2){
+  left: 100%;
+}
+.offerComp:nth-child(3){
+  left: 200%;
+} */
+
+
+
+
+/* .offerWrap {
+  position: relative;
+}
+
+.offer {
+  height: 200vh;
+  text-align: center;
+}
+
+.offerTxt {
+  position: absolute;
+  top: 50vh;
+  left: 50%;
+  font-style: italic;
+  background: linear-gradient(90deg, #c81d77, #6710c2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+
+  padding-right: 15px;
+  transform: ;
+  transform-origin: center;
+
+} */
+
+
+
+/* .highlight {
+  position: absolute;
+  background-color: #6710c2; 
+  z-index: 10;
+  width: 16%;
+  height: 5%;
+  top: 47%;
+  left: 3.8%;
+}
+
+.line {
+  position: absolute;
+  width: 100px; 
+  height: 1px;
+  background: #fff;
+
+  top: 47%;
+  left: 3.8%;
+
+  transform: rotate(45deg);
+}
+
+.highlight p {
+  position: absolute;
+  top: 0;
+  left: 0;
+} */
